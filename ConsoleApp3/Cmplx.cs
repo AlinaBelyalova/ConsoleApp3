@@ -91,17 +91,22 @@ namespace ConsoleApp3
             return $"Re = {this.Re}. Im = {this.Im}, R = {this.R}, Phi = {this.Phi}";
         }
 
-        //public static Cmplx operator +(Cmplx a, Cmplx b)
-        //=> new Cmplx(a.Re + b.Re, a.Im + b.Im);
-        //public static Cmplx operator -(Cmplx a, Cmplx b)
-        //=> new Cmplx(a.Re + (-b.Re), a.Im + (-b.Im));
-        //public static Cmplx operator *(Cmplx a, Cmplx b)
-        //=> new Cmplx(a.Re * b.Re - a.Im * b.Im, a.Re * b.Im - b.Re * a.Im);
+        #region Перегрузка операторов
+        public static Cmplx operator +(Cmplx a, Cmplx b)
+        => new Cmplx(a.Re + b.Re, a.Im + b.Im);
+        public static Cmplx operator -(Cmplx a, Cmplx b)
+        => new Cmplx(a.Re + (-b.Re), a.Im + (-b.Im));
+        public static Cmplx operator *(Cmplx a, Cmplx b)
+        => new Cmplx(a.Re * b.Re - a.Im * b.Im, a.Re * b.Im - b.Re * a.Im);
+        public static Cmplx operator /(Cmplx a, Cmplx b)
+        => new Cmplx((a.Re * b.Re + a.Im * b.Im) / (Math.Pow(b.Re, 2) + Math.Pow(b.Im, 2)), (b.Re * a.Im - a.Re * b.Im) / (Math.Pow(b.Re, 2) + Math.Pow(b.Im, 2)));
         //public Cmplx Sqr()
         //{
         //    return new Cmplx(this.Re * this.Re - this.Im * this.Im, 2 * this.Re * this.Im);
         //}
+        #endregion
 
+        #region Тест
         public static Cmplx Summ(Cmplx a, Cmplx b)
         {
             return new Cmplx(a.Re + b.Re, a.Im + b.Im);
@@ -127,5 +132,6 @@ namespace ConsoleApp3
             char k = 'k';
             return new Cmplx(Math.Sqrt(this.R) * (Math.Cos((this.Phi + 2 * Math.PI * k) / 2)), Math.Sqrt(this.R) * Math.Sin((this.Phi + 2 * Math.PI * k) / 2));
         }
+        #endregion 
     }
 }

@@ -13,15 +13,18 @@ namespace Square
             Cmplx a = new Cmplx(2.0, 3.0);
             Cmplx b = new Cmplx(1.0, 2.0);
 
-            Cmplx c = Cmplx.Summ(a, b);
-            Cmplx d = Cmplx.Diff(a, b);
-            Cmplx e = Cmplx.Mult(a, b);
-            Cmplx g = a.Sqr();
-            Cmplx t = a.Sqrt();
+
+            //Cmplx c = Cmplx.Summ(a, b);
+            //Cmplx d = Cmplx.Diff(a, b);
+            //Cmplx e = Cmplx.Mult(a, b);
+            //Cmplx g = a.Sqr();
+            //Cmplx t = a.Sqrt();
 
 
-            Console.WriteLine(t);
-            //Console.WriteLine(d);
+            Console.WriteLine(a+b);
+            Console.WriteLine(a-b);
+            Console.WriteLine(a * b);
+            Console.WriteLine(a / b);
         }
     }
 }
